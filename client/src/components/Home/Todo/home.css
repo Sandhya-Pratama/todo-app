@@ -1,0 +1,123 @@
+.homepage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.todo {
+  margin-top: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+  height: 100%;
+}
+
+.containernavbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+  height: 100%;
+}
+
+.navbar {
+  position: absolute;
+  top: 20px;
+  height: 60px;
+  width: 100%;
+  max-width: 800px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.navbar h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.navbar .username {
+  font-size: 18px;
+  margin-right: 15px;
+}
+
+.navbar .dark-mode-toggle {
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  color: rgb(255, 255, 255);
+  transition: background-color 0.3s;
+}
+
+.navbar .dark-mode-toggle svg {
+  font-size: 30px;
+}
+
+.navbar .dark-mode-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+}
+
+.containerform {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  max-width: 600px;
+  z-index: 1000;
+}
+
+.todo-form {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+.input {
+  flex: 1;
+  padding: 10px;
+  border: 2px solid #bbbbbb;
+  border-radius: 5px;
+  background: transparent;
+  font-size: 16px;
+  color: white;
+}
+.input:focus {
+  border: 1px solid #ffffff;
+  outline: none;
+}
+.input::placeholder {
+  color: white; /* Memberikan warna putih pada placeholder */
+}
+.btn {
+  background: #0e0e0e;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  margin-left: 20px;
+  padding: 10px 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.navbar h1 {
+  color: white;
+  font-weight: bold;
+}

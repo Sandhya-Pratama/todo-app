@@ -1,0 +1,38 @@
+# Golang binary files
+/bin
+/obj
+
+# Vendor directory (optional, jika kamu menggunakan vendor)
+# /vendor
+
+# Go workspace file
+go.work
+go.work.sum
+
+# Golang cache files
+*.exe
+*.test
+*.out
+
+# IDE or Editor directories
+.idea/
+.vscode/
+
+# MacOS system files
+.DS_Store
+
+# Log files
+*.log
+
+# Environment variable files (untuk mencegah mengecek file .env)
+.env
+
+# MongoDB local data directory (jika ada)
+db/
+
+# Coverage files
+coverage/
+
+# Temporary files
+*.swp
+*~
