@@ -13,10 +13,6 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center; /* Memusatkan konten secara horizontal */
-  align-items: center;
 }
 
 code {

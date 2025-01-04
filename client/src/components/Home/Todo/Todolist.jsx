@@ -23,34 +23,16 @@ const TodoList = () => {
       <div className="todo">
         <Container maxW={"700px"}>
           <Text
-            fontSize="4xl"
-            textTransform="uppercase"
-            fontWeight="bold"
-            textAlign="center"
+            fontSize={"4xl"}
+            textTransform={"uppercase"}
+            fontWeight={"bold"}
+            textAlign={"center"}
             my={2}
-            bgGradient="linear(to-l, cyan.400, purple.500)"
+            bgGradient="to-l"
+            gradientFrom="cyan.400"
+            gradientTo="purple.fg"
             bgClip="text"
-            sx={{
-              backgroundSize: "200% 200%", // Pastikan ukuran besar untuk animasi
-              animation: "gradientAnimation 6s ease infinite", // Atur animasi
-              "@keyframes gradientAnimation": {
-                "0%": {
-                  backgroundPosition: "0% 50%",
-                  backgroundImage:
-                    "linear-gradient(to right, cyan.400, purple.500)",
-                },
-                "50%": {
-                  backgroundPosition: "100% 50%",
-                  backgroundImage:
-                    "linear-gradient(to right, pink.400, orange.400)",
-                },
-                "100%": {
-                  backgroundPosition: "0% 50%",
-                  backgroundImage:
-                    "linear-gradient(to right, cyan.400, purple.500)",
-                },
-              },
-            }}
+            animation="gradient 3s ease infinite"
           >
             Todays Tasks
           </Text>
