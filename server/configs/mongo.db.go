@@ -11,7 +11,6 @@ import (
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
-// Fungsi untuk menghubungkan ke MongoDB dan mengakses database "golang_db"
 func ConnectDB() *mongo.Database {
 	// Memuat file .env
 	err := godotenv.Load()

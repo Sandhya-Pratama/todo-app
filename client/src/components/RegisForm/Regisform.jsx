@@ -13,7 +13,7 @@ const Regisform = () => {
     navigate("/login"); // Navigasi ke halaman login
   };
   return (
-    <div className="loginform">
+    <div className="registerform">
       <form onSubmit={handleRegister}>
         <h1>Register</h1>
         <div className="inputbox">

@@ -1,47 +1,58 @@
 import { Flex, Spinner, Container, Stack, Text } from "@chakra-ui/react";
-import { useState } from "react";
+import { useQuery } from "@tanstack/react-query";
 import TodoItem from "./Todoitem";
 
 const TodoList = () => {
-  const [isLoading, setIsLoading] = useState(false);
-  const todos = [
-    {
-      _id: 1,
-      body: "Buy groceries",
-      completed: true,
+  const {
+    data: todos,
+    isLoading,
+    error,
+  } = useQuery({
+    queryKey: ["todos"],
+    queryFn: async () => {
+      const response = await fetch("http://localhost:5000/todos");
+      const data = await response.json();
+      if (!response.ok) {
+        throw new Error(data.message || "Something went wrong");
+      }
+      return data || [];
     },
-    {
-      _id: 2,
-      body: "Walk the dog",
-      completed: false,
-    },
-    {
-      _id: 3,
-      body: "Do laundry",
-      completed: false,
-    },
-    {
-      _id: 4,
-      body: "Cook dinner",
-      completed: true,
-    },
-  ];
+  });
   return (
     <>
       <div className="todo">
         <Container maxW={"700px"}>
           <Text
-            fontSize={"4xl"}
-            textTransform={"uppercase"}
-            fontWeight={"bold"}
-            textAlign={"center"}
+            fontSize="4xl"
+            textTransform="uppercase"
+            fontWeight="bold"
+            textAlign="center"
             my={2}
-            bgGradient="to-l"
-            gradientFrom="cyan.400"
-            gradientTo="purple.fg"
+            bgGradient="linear(to-l, cyan.400, purple.500)"
             bgClip="text"
+            sx={{
+              backgroundSize: "200% 200%", // Pastikan ukuran besar untuk animasi
+              animation: "gradientAnimation 6s ease infinite", // Atur animasi
+              "@keyframes gradientAnimation": {
+                "0%": {
+                  backgroundPosition: "0% 50%",
+                  backgroundImage:
+                    "linear-gradient(to right, cyan.400, purple.500)",
+                },
+                "50%": {
+                  backgroundPosition: "100% 50%",
+                  backgroundImage:
+                    "linear-gradient(to right, pink.400, orange.400)",
+                },
+                "100%": {
+                  backgroundPosition: "0% 50%",
+                  backgroundImage:
+                    "linear-gradient(to right, cyan.400, purple.500)",
+                },
+              },
+            }}
           >
-            Today's Tasks
+            Todays Tasks
           </Text>
           {isLoading && (
             <Flex justifyContent={"center"} my={4}>
@@ -53,8 +64,13 @@ const TodoList = () => {
               <Text fontSize={"xl"} textAlign={"center"} color={"gray.500"}>
                 All tasks completed! 🤞
               </Text>
-              <img src="/go.png" alt="Go logo" width={70} height={70} />
+              <img src="/sanz.png" alt="Sanz" width={70} height={70} />
             </Stack>
+          )}
+          {error && (
+            <Text fontSize={"xl"} color={"red.500"} textAlign={"center"}>
+              Error fetching tasks: {error.message}
+            </Text>
           )}
           <Stack gap={3}>
             {todos?.map((todo) => (

@@ -47,7 +47,7 @@ const LoginForm = ({ onLogin }) => {
           <div className="inputbox">
             <input
               type="text"
-              placeholder="Enter your username"
+              placeholder="Username"
               required
               value={username}
               onChange={(e) => setUsername(e.target.value)}
@@ -57,7 +57,7 @@ const LoginForm = ({ onLogin }) => {
           <div className="inputbox">
             <input
               type="password"
-              placeholder="Enter your password"
+              placeholder="Password"
               required
               value={password}
               onChange={(e) => setPassword(e.target.value)}
@@ -75,7 +75,7 @@ const LoginForm = ({ onLogin }) => {
           {error && <p className="error-message">{error}</p>}
           <div className="register-link">
             <p>
-              Don't have an account? <Link to="/register">Register</Link>
+              Don`t have an account? <Link to="/register">Register</Link>
             </p>
           </div>
         </form>

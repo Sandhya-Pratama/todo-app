@@ -1,5 +1,19 @@
-.loginform {
+.registerbody {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+}
+.registerform {
   width: 420px;
+  max-width: 420px;
   background: transparent;
   backdrop-filter: blur(30px);
   border-radius: 10px;
@@ -7,15 +21,15 @@
   box-shadow: 0 0 10px rgba(8, 7, 16, 0.6);
   color: #fff;
   padding: 30px 40px;
+  box-sizing: border-box;
 }
 
-.loginform h1 {
+.registerform h1 {
   font-size: 36px;
-
   text-align: center;
 }
 
-.loginform .inputbox {
+.registerform .inputbox {
   position: relative;
   margin: 30px 0;
   width: 100%;
@@ -47,28 +61,32 @@
   font-size: 16px;
 }
 
-.loginform .remember-forgot {
+.registerform .remember-forgot {
   font-size: 14px;
   margin: -15px 0 15px;
   display: flex;
   justify-content: space-between;
 }
 
-.loginform .remember-forgot label input {
+.registerform .remember-forgot label input {
   accent-color: #fff;
   margin-right: 4px;
 }
 
-.loginform .remember-forgot a {
+h1 {
+  font-weight: bold;
+}
+
+.registerform .remember-forgot a {
   color: #fff;
   text-decoration: none;
 }
 
-.loginform .remember-forgot a:hover {
+.registerform .remember-forgot a:hover {
   text-decoration: underline;
 }
 
-.loginform button {
+.registerform button {
   width: 100%;
   height: 50px;
   border-radius: 40px;
@@ -84,23 +102,23 @@
   transition: 0.5s;
 }
 
-.loginform button:hover {
+.registerform button:hover {
   transform: scale(1.03);
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
-.loginform .register-link {
+.registerform .register-link {
   font-size: 14px;
   text-align: center;
   margin: 20px 0 15px;
 }
 
-.loginform .register-link p a {
+.registerform .register-link p a {
   color: #fff;
   text-decoration: none;
   font-weight: 600;
 }
 
-.loginform .register-link p a:hover {
+.registerform .register-link p a:hover {
   text-decoration: underline;
 }
